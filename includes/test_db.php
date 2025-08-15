@@ -1,4 +1,8 @@
 <?php
+
+// includes/test_db.php
+// Simple page to test database connection 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require 'db.php'; // Adjust path if needed

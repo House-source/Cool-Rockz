@@ -1,3 +1,7 @@
+-- Setup script for Cool Rockz database
+-- Creates database, tables, users, categories, and products
+
+
 -- Create the database
 CREATE DATABASE IF NOT EXISTS shopping_site;
 USE shopping_site;
@@ -60,7 +64,7 @@ CREATE TABLE contact_messages (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
--- Create table to hold cart items
+-- Create cart items table
 CREATE TABLE cart_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -71,12 +75,13 @@ CREATE TABLE cart_items (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
--- Initialize Store, categories and products.
+-- Initialize Store, create two categories
 INSERT INTO categories (name) 
 VALUES 
 ('Cool Rockz'),
 ('Cool Standz');
 
+-- Create 6 products, 3 in each category
 INSERT INTO products (category_id, name, description, price, image_path, stock_quantity) 
 VALUES 
 (1, 'Smiley', '(Cool) Rock with a smiley face painted on.' , 5.00, '../images/smiley.jpg', 1),
@@ -86,6 +91,11 @@ VALUES
 (2, 'Adjustable Brass Arm Stand', 'A fancy brass stand with adjustable arms, set on a walnut base.' , 15.00, '../images/brassarm.jpg', 10),
 (2, '3 Tier Acrylic Display Riser', '3-tier acrylic riser stand. Perfect for holding a bunch of Cool Rockz!' , 20.00, '../images/3tier.jpg', 10);
 
+-- Create two users to illustrate user roles: 'user' and 'admin'
+INSERT INTO users (name, email, password_hash, user_role) 
+VALUES 
+('Tom Storeuser', 'john@example.com', '$2y$10$Vuxn9ipYlyq.NS.1nCgO/uVj2zblxJtW.hItT4XjcoIUSSJbvBQGq', 'user'), -- password: Password
+('Joseph Joestore', 'joejoe@example.com', '$2y$10$Vuxn9ipYlyq.NS.1nCgO/uVj2zblxJtW.hItT4XjcoIUSSJbvBQGq', 'admin'); -- password: Password
 
 -- Setup sql user for database
 SELECT User, Host FROM mysql.user;
@@ -93,12 +103,6 @@ CREATE USER 'Dave Database'@'localhost' IDENTIFIED BY 'Dave@database1';
 GRANT ALL PRIVILEGES ON shopping_site.* TO 'Dave Database'@'localhost';
 FLUSH PRIVILEGES;
 
--- Create two users to illustrate user roles: 'user' and 'admin'
-INSERT INTO users (name, email, password_hash, user_role) 
-VALUES ('Tom Storeuser', 'john@example.com', '$2y$10$Vuxn9ipYlyq.NS.1nCgO/uVj2zblxJtW.hItT4XjcoIUSSJbvBQGq', 'user'); -- password: Password
-INSERT INTO users (name, email, password_hash, user_role) 
-VALUES ('Joseph Joestore', 'joejoe@example.com', '$2y$10$Vuxn9ipYlyq.NS.1nCgO/uVj2zblxJtW.hItT4XjcoIUSSJbvBQGq', 'admin'); -- password: Password
 
 -- Delete/Reset database
 -- DROP DATABASE shopping_site; 
-

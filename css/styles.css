@@ -124,6 +124,15 @@ form p {
   margin-top: 16px;
 }
 
+.error-message {
+    color: #d00;
+    background-color: #fdd;
+    padding: 10px;
+    border: 1px solid #d00;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
 /* Home */
 .home-container {
   padding: 40px 20px;
@@ -198,6 +207,11 @@ form p {
 
 .product-detail button:hover {
   background-color: #555;
+}
+
+.product-image {
+  max-width: 300px;
+  width: 100%;
 }
 
 /* Cart */
@@ -279,14 +293,150 @@ form p {
 
 .order-history th,
 .order-history td {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   padding: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .order-history th {
-  background-color: #f4f4f4;
+  background-color: #333;
+  font-weight: bold;
 }
+
+.inline-form {
+  display: inline;
+}
+
+/* Product Management (Admin Pages) */
+.manage-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.manage-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table thead tr {
+  background-color: #333;
+  color: white;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-links a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.action-links a:hover {
+  text-decoration: underline;
+}
+
+/* Shared Form Styling for Add/Edit Product */
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+}
+
+.form-container form input,
+.form-container form textarea,
+.form-container form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-container form button:hover {
+  background-color: #555;
+}
+
+.form-container form p {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #555;
+}
+
 
 /* Footer */
 footer {

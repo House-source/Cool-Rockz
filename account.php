@@ -1,4 +1,8 @@
 <?php 
+
+// account.php
+// View and edit user information, view order history.
+
 include 'includes/header.php'; 
 require 'includes/db.php'; // your database connection
 
@@ -52,6 +56,9 @@ if (!$orders) {
     <p><strong>Name:</strong> <?php echo htmlspecialchars($user['name']); ?></p>
     <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
     <p><strong>Member Since:</strong> <?php echo date('M Y', strtotime($user['date_joined'])); ?></p>
+	
+	<!-- Edit Profile button -->
+	<p><a href="profile.php" class="btn-edit">Edit Profile</a></p>
   </section>
 
   <section class="order-history">
